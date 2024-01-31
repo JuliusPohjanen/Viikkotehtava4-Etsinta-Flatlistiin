@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { DATA } from './Data';
 import Row from './components/Row';
 import Search from './components/search';
+import Add from './components/Add';
 
 export default function App() {
   const [items, setItems] = useState([]);
@@ -26,6 +27,7 @@ export default function App() {
   return (
     <SafeAreaView>
       <Search executeSearch={executeSearch} />
+      <Add items={items} setItems={setItems} />
       <FlatList
         data={items} 
         keyExtractor={item => item.id}
